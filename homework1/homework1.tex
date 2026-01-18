@@ -1,6 +1,8 @@
 \documentclass[12pt]{article}
 \newcommand{\ul}[1]{\underline{#1}}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
 
 \setlength{\textwidth}{6.5in}
 \setlength{\textheight}{9.0in}
@@ -20,22 +22,33 @@ Homework 1 \hfill {\bf Brandon Aikman} \\
 		\textbf{Bob is not necessarily correct. CPUs that are built on different architectures likely complete a different number of instructions per clock cycle. Additionally, if the Mac has less memory than the computer running an Intel microprocessor, it will likely perform slower on memory-intensive applications. I would ask the customer what their needs are, determine which computer was suited best to their needs, and make recommendations based on that information.}
 		
 	% 2.
-	\item In Cedar logic, design and implement a 16 bits wide Adder/Subtractor based on the following diagram. Attach two screens shots to your homework submission: with one shows the adder works fine and another shows the subtractor works fine. (5 pts) \\\\
-	
+	\item In Cedar Logic, design and implement a 16 bits wide Adder/Subtractor. Attach two screenshots to your homework submission: with one showing the adder and another showing the subtractor. (5 pts) \\\\
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.6\linewidth]{addition.png}
+    	\caption{Example of Addition.}
+	\end{figure}
+	\begin{figure}[H]
+    	\centering
+    	\includegraphics[width=0.6\linewidth]{subtraction.png}
+    	\caption{Example of Subtraction.}
+	\end{figure}
+
 	
 	% 3.
-	\item Research on the following adders and write a paragraph for each to explain its algorithm. (15 pts)
+	\item Research the following adders and write a paragraph for each to explain its algorithm. (15 pts)
 	\begin{enumerate}
-		\item Carry by pass adder \\
-			Test
+		\item Carry bypass adder \\
+			\textbf{Carry bypass adders are adders that are designed to reduce the propagation delay from carry signals that occur in binary addition. This form of an adder is segmented into blocks, with each block determining if it can propagate a carry fully or not. If it can, then then the incoming carry bypasses this whole block and goes to the next one.}
 		\item Carry select adder \\
-			Test
-		\item Carry look ahead adder \\
-			Test
+			\textbf{Carry select adders perform redundant operations in parallel, assuming that the incoming carry bit will either be 1 or 0. When the real carry-in is available, a multiplexer selects the proper computed sum from the two calculated alternatives. While it is faster, it's biggest drawback is the increased hardware cost compared with other types of adders.}
+		\item Carry lookahead adder \\
+			\textbf{Carry lookahead adders seek to eliminate long carry propagation chains by computing carry signals in parallel. For each bit position, there is a signal that indicates whether the bit will produce a carry and a signal that indicates whether the bit will pass a carry to the next stage. This adder is more complex and requires more hardware than most other adders.}
 	\end{enumerate}
 	
 	% 4.
 	\item Write a paragraph about what is your point of view of integrating your faith into “Computer Architecture” class? (5 pts) \\
+		\textbf{I believe that integrating our faith into our academics is important, because our faith should permeate and direct all aspects of our lives. Our faith can help us to be good stewards of creation and inspire how we seek to design computers. Additionally, our faith can help guard our integrity as we work on assignments, ensuring that the work we submit is work that we deserve to credit to ourselves.}
     
 \end{enumerate}
 
