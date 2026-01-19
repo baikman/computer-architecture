@@ -1,0 +1,194 @@
+
+<circuit>
+<CurrentPage>0</CurrentPage>
+<page 0>
+<PageViewport>-32.95,39.6893,61.95,-63.2229</PageViewport>
+<gate>
+<ID>2</ID>
+<type>AA_LABEL</type>
+<position>14.5,-13</position>
+<gparam>LABEL_TEXT Go to https://cedar.to/vjyQw7 to download the latest version!</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>3</ID>
+<type>AA_LABEL</type>
+<position>14.5,-9.5</position>
+<gparam>LABEL_TEXT Error: This file was made with a newer version of Cedar Logic!</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate></page 0>
+</circuit>
+<throw_away></throw_away>
+
+	<version>2.3.5 | 2018-09-25 23:06:05</version><circuit>
+<CurrentPage>0</CurrentPage>
+<page 0>
+<PageViewport>-149.564,38.7672,192.018,-133.559</PageViewport>
+<gate>
+<ID>10</ID>
+<type>AA_LABEL</type>
+<position>25,-18</position>
+<gparam>LABEL_TEXT Address Register</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>2</ID>
+<type>AI_RAM_12x16</type>
+<position>23,12.5</position>
+<gparam>angle 0</gparam>
+<lparam>ADDRESS_BITS 12</lparam>
+<lparam>DATA_BITS 16</lparam></gate>
+<gate>
+<ID>12</ID>
+<type>AI_REGISTER12</type>
+<position>23.5,-58</position>
+<gparam>VALUE_BOX -2.4,-0.8,2.4,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 12</lparam>
+<lparam>MAX_COUNT 4095</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>4</ID>
+<type>AE_REGISTER8</type>
+<position>23.5,-219.5</position>
+<output>
+<ID>OUT_1</ID>1 </output>
+<output>
+<ID>OUT_3</ID>1 </output>
+<gparam>VALUE_BOX -1.8,-0.8,1.8,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 8</lparam>
+<lparam>MAX_COUNT 255</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>14</ID>
+<type>AM_REGISTER16</type>
+<position>23.5,-122</position>
+<gparam>VALUE_BOX -2.8,-0.8,2.8,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 16</lparam>
+<lparam>MAX_COUNT 65536</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>6</ID>
+<type>AI_REGISTER12</type>
+<position>24,-31.5</position>
+<gparam>VALUE_BOX -2.4,-0.8,2.4,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 12</lparam>
+<lparam>MAX_COUNT 4095</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>8</ID>
+<type>AM_REGISTER16</type>
+<position>23.5,-88</position>
+<gparam>VALUE_BOX -2.8,-0.8,2.8,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 16</lparam>
+<lparam>MAX_COUNT 65536</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>11</ID>
+<type>AA_LABEL</type>
+<position>24.5,-44.5</position>
+<gparam>LABEL_TEXT Program Counter</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>13</ID>
+<type>AA_LABEL</type>
+<position>24,-73</position>
+<gparam>LABEL_TEXT Data Register</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>15</ID>
+<type>AA_LABEL</type>
+<position>24,-107</position>
+<gparam>LABEL_TEXT Accumulator</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>16</ID>
+<type>AM_REGISTER16</type>
+<position>23,-155</position>
+<gparam>VALUE_BOX -2.8,-0.8,2.8,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 16</lparam>
+<lparam>MAX_COUNT 65536</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>17</ID>
+<type>AA_LABEL</type>
+<position>23.5,-140</position>
+<gparam>LABEL_TEXT Instruction Register</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>18</ID>
+<type>AM_REGISTER16</type>
+<position>23.5,-188</position>
+<gparam>VALUE_BOX -2.8,-0.8,2.8,1.8</gparam>
+<gparam>angle 0.0</gparam>
+<lparam>CURRENT_VALUE 0</lparam>
+<lparam>INPUT_BITS 16</lparam>
+<lparam>MAX_COUNT 65536</lparam>
+<lparam>SYNC_CLEAR true</lparam>
+<lparam>SYNC_LOAD true</lparam>
+<lparam>UNKNOWN_OUTPUTS false</lparam></gate>
+<gate>
+<ID>19</ID>
+<type>AA_LABEL</type>
+<position>24,-173</position>
+<gparam>LABEL_TEXT Temporary Register</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>20</ID>
+<type>AA_LABEL</type>
+<position>24,-207.5</position>
+<gparam>LABEL_TEXT Output Register</gparam>
+<gparam>TEXT_HEIGHT 2</gparam>
+<gparam>angle 0.0</gparam></gate>
+<gate>
+<ID>22</ID>
+<type>BX_16X1_BUS_END</type>
+<position>-55,-11.5</position>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 16</lparam></gate>
+<gate>
+<ID>24</ID>
+<type>BX_16X1_BUS_END</type>
+<position>-48.5,-39</position>
+<gparam>angle 0.0</gparam>
+<lparam>INPUT_BITS 16</lparam></gate>
+<wire>
+<ID>1 </ID>
+<shape>
+<vsegment>
+<ID>0</ID>
+<points>27.5,-221.5,27.5,-219.5</points>
+<connection>
+<GID>4</GID>
+<name>OUT_3</name></connection>
+<connection>
+<GID>4</GID>
+<name>OUT_1</name></connection></vsegment></shape></wire></page 0></circuit>
