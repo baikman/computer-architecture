@@ -1,0 +1,37 @@
+\documentclass[12pt]{article}
+\newcommand{\ul}[1]{\underline{#1}}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf EGCP-3210 \hfill Computer Architecture \hfill Spring 2026} \\
+Homework 2 \hfill {\bf Brandon Aikman} \\
+
+% Homework 2
+\begin{enumerate}
+	% 1.
+	\item What is the difference between a direct and indirect address instruction? How many references to memory are needed for each type of instruction to bring an operand into a processor register? (5 pts) \\\\
+		\textbf{answer}
+		
+	% 2.
+	\item Use the MANO machine data path diagram presented in the lecture notes to answer the following questions:
+	\begin{enumerate}
+		\item Explain why each of the following micro-operations cannot be executed during a single clock pulse in the system shown in slide 8. (5pts)\\
+		\item Specify a sequence of micro-operations that will perform the operation. (15pts, 5 each)
+		\begin{enumerate}
+			\item IR$\leftarrow$M[PC]
+			\item AC$\leftarrow$AC+TR
+			\item DR$\leftarrow$DR+AC
+		\end{enumerate}
+	\end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
