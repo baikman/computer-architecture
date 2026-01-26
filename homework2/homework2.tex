@@ -18,7 +18,7 @@ Homework 2 \hfill {\bf Brandon Aikman} \\
 \begin{enumerate}
 	% 1.
 	\item What is the difference between a direct and indirect address instruction? How many references to memory are needed for each type of instruction to bring an operand into a processor register? (5 pts) \\\\
-		\textbf{answer}
+		\textbf{Direct address instructions contain the address of the operand, while indirect address instructions contain a `pointer' to another location, which has the operand instruction. For direct address instructions, only one reference to memory is needed, but for indirect address instructions, at least two references to memory are necessary to bring an operand into a processor register.}
 		
 	% 2.
 	\item Use the MANO machine data path diagram presented in the lecture notes to answer the following questions:
@@ -31,6 +31,27 @@ Homework 2 \hfill {\bf Brandon Aikman} \\
 			\item DR$\leftarrow$DR+AC
 		\end{enumerate}
 	\end{enumerate}
+	
+	% 3.
+	\item Consider a hypothetical 32-bit microprocessor having 32-bit instructions composed of two fields: the first byte contains the opcode and the remainder the immediate operand or an operand address. (5 pts)
+	\begin{enumerate}
+		\item How many bits are needed for the program counter? \\
+		\textbf{24 bits.}
+		\item What is the maximum directly addressable memory capacity? \\
+		\textbf{$2^{32-8}$ bits $= 2097152$ bytes.}
+	\end{enumerate}
+	
+	%4.
+	\item The content of PC in the MANO machine is 3AF. The content of AC is 7EC3. The content of memory at address 3AF is 932E. The content of memory at address 32E is 09AC. The content of memory at address 9AC is 8B9F. (15 pts, 5 each)
+	\begin{enumerate}
+		\item What is the instruction that will be fetched and executed next?
+		\item Show the binary operation that will be performed in the AC when the instruction is executed.
+		\item Give the contents of registers PC, AR, DR, AC, and IR in hexadecimal and the value of E, I, and the sequence counter in binary at the end of the instruction cycle.
+	\end{enumerate}
+	
+	%5.
+	\item Provide your insights on the article \textit{It's Time for Clockless Chips}. (5 pts) \\\\
+	\textbf{it's cool idk.}
     
 \end{enumerate}
 
