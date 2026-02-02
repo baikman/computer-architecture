@@ -23,12 +23,30 @@ Homework 2 \hfill {\bf Brandon Aikman} \\
 	% 2.
 	\item Use the MANO machine data path diagram presented in the lecture notes to answer the following questions:
 	\begin{enumerate}
-		\item Explain why each of the following micro-operations cannot be executed during a single clock pulse in the system shown in slide 8. (5pts)\\
+		\item Explain why each of the following operations cannot be executed during a single clock pulse in the system shown in slide 8. (5pts)
+		\begin{enumerate}
+			\item \textbf{To move the contents of what is located at the address of the program counter, the contents of the program counter must be loaded into the address register, then into the memory unit, and finally the memory unit can output the data on the bus which the instruction register can receive.}
+			\item \textbf{To update the accumulator by adding the temporary register to it, the data from the temporary register must be moved into the data register. Then, on the next clock cycle, it can go into the accumulator and be added.}
+			\item \textbf{First, the contents of the data register must be added to the accumulator. Then, the result can be put back onto the main bus and the data register can receive the summation.}
+		\end{enumerate}
 		\item Specify a sequence of micro-operations that will perform the operation. (15pts, 5 each)
 		\begin{enumerate}
-			\item IR$\leftarrow$M[PC]
-			\item AC$\leftarrow$AC+TR
-			\item DR$\leftarrow$DR+AC
+			\item IR$\leftarrow$M[PC]\\
+			
+			AR$\leftarrow$PC\\
+			IR$\leftarrow$M[AR](, PC$\leftarrow$PC + 1)\\			
+
+			\item AC$\leftarrow$AC+TR\\
+			
+			DR$\leftarrow$TR\\
+			AC$\leftarrow$AC + DR\\
+			
+			
+			\item DR$\leftarrow$DR+AC\\
+			
+			AC$\leftarrow$AC + DR\\
+			DR$\leftarrow$AC\\
+			
 		\end{enumerate}
 	\end{enumerate}
 	
@@ -44,14 +62,26 @@ Homework 2 \hfill {\bf Brandon Aikman} \\
 	%4.
 	\item The content of PC in the MANO machine is 3AF. The content of AC is 7EC3. The content of memory at address 3AF is 932E. The content of memory at address 32E is 09AC. The content of memory at address 9AC is 8B9F. (15 pts, 5 each)
 	\begin{enumerate}
-		\item What is the instruction that will be fetched and executed next?
-		\item Show the binary operation that will be performed in the AC when the instruction is executed.
-		\item Give the contents of registers PC, AR, DR, AC, and IR in hexadecimal and the value of E, I, and the sequence counter in binary at the end of the instruction cycle.
+		\item What is the instruction that will be fetched and executed next?\\
+		\textbf{ADD (0x9xxx).}
+		\item Show the binary operation that will be performed in the AC when the instruction is executed.\\
+		\textbf{1000101110011111 + 0111111011000011.}
+		\item Give the contents of registers PC, AR, DR, AC, and IR in hexadecimal and the value of E, I, and the sequence counter in binary at the end of the instruction cycle.\\
+		\textbf{
+			PC: 3B0\\
+			AR: 9AC\\
+			DR: 8B9F\\
+			AC: 0A62\\
+			IR: 932E\\
+			E: 1\\
+			I: 1\\
+			SC:	0
+		}
 	\end{enumerate}
 	
 	%5.
 	\item Provide your insights on the article \textit{It's Time for Clockless Chips}. (5 pts) \\\\
-	\textbf{it's cool idk.}
+	\textbf{The October 2001 article, \textit{It's Time for Clockless Chips}, provides interesting insight into the state of the microprocessor design industry in the early 2000s. Looking back on strong claims about past technological developments that seemed to be on the brink of real, long-term success, we see that these products that are hyped up to the public seldom reach success and seldom provide lasting value to the public. Relating to this article, the author makes bold claims about the inevitability of the clockless microprocessor takeover, which, 25 years later, we can see never happened to scale. Still, the article provides a good, high-level overview of the capabilities of clockless microprocessors, especially their applications. I think that the biggest takeaway from the article is that clockless chips are difficult to develop, but they can have certain niche applications that validate the costs associated with their development and fabrication.}
     
 \end{enumerate}
 
