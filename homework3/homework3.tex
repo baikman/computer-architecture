@@ -1,0 +1,52 @@
+\documentclass[12pt]{article}
+\newcommand{\ul}[1]{\underline{#1}}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf EGCP-3210 \hfill Computer Architecture \hfill Spring 2026} \\
+Homework 3 \hfill {\bf Brandon Aikman} \\
+
+% Homework 2
+\begin{enumerate}
+	% 1.
+	\item For the mano machine we discussed in class, assume we want to replace the AND instruction with a SUB instruction, whose function will be:
+	\begin{enumerate}
+		\item AC$\leftarrow$AC - M[addr]\\
+		Write the complete isntruction cycle analysis by specifying microoperations clock cycle by clock cycle along with its condition. (10 pts)\\\\
+		T0: AR$\leftarrow$PC\\
+		T1: IR$\leftarrow$M[AR], PC$\leftarrow$PC + 1\\
+		T2: I$\leftarrow$IR(15), AR$\leftarrow$IR(0-11), D7...D0$\leftarrow$Decode(IR(12-14))\\
+		T3 $\cdot$ I $\cdot$ D7$'$: AR$\leftarrow$M[AR]\\
+		T4 $\cdot$ D1: DR$\leftarrow$M[AR]\\
+		T5 $\cdot$ D1: AC$\leftarrow$AC - DR, E$\leftarrow$C$_{\mbox{out}}$, SC$\leftarrow$0\\  
+		\item What if we want to replace the AND instruction with a SEQ instruction. SEQ is defined as: SEQ: if (M[AR]==AC), skip next instruction. Do the same instruction analysis to the SEQ.(10pts)\\\\
+		T0: AR$\leftarrow$PC\\
+		T1: IR$\leftarrow$M[AR], PC$\leftarrow$PC + 1\\
+		T2: I$\leftarrow$IR(15), AR$\leftarrow$IR(0-11), D7...D0$\leftarrow$Decode(IR(12-14))\\
+		T3 $\cdot$ I $\cdot$ D7$'$: AR$\leftarrow$M[AR]\\
+		T4 $\cdot$ D0: DR$\leftarrow$M[AR]\\
+		T5 $\cdot$ D0 $\cdot$ (AC - DR = 0): PC$\leftarrow$PC + 1, SC$\leftarrow$0\\
+		T5 $\cdot$ D0 $\cdot$ (AC - DR $\neq$ 0): SC$\leftarrow$0\\
+	\end{enumerate}
+	
+	% 2.
+	\item The operations to be performed with a flip-flop F are specified by the following register transfer statement:\\
+	xT3: F$\leftarrow$1; set F\\
+	yT1: F$\leftarrow$0; clear F\\
+	zT2: F$\leftarrow$/F; complement F\\
+	wT5: F$\leftarrow$G; load G\\
+	Implement with a JK flip-flop (10 pts)\\\\
+	J = xT3 $\lor$ zT2 $\lor$ (wT5 $\land$ G)\\
+	K = yT1 $\lor$ zT2 $\lor$ (wT5 $\land$ $\neg$G)
+    
+\end{enumerate}
+
+\end{document}
