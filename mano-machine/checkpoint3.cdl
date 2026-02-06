@@ -19153,7 +19153,7 @@
 <ID>count_enable</ID>62 </input>
 <gparam>VALUE_BOX -0.8,-0.8,0.8,1.8</gparam>
 <gparam>angle 0.0</gparam>
-<lparam>CURRENT_VALUE 3</lparam>
+<lparam>CURRENT_VALUE 4</lparam>
 <lparam>INPUT_BITS 4</lparam>
 <lparam>MAX_COUNT 15</lparam>
 <lparam>SYNC_CLEAR true</lparam>
