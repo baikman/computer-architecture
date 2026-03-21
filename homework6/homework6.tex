@@ -1,0 +1,53 @@
+\documentclass[12pt]{article}
+\newcommand{\ul}[1]{\underline{#1}}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{9.0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\topmargin}{-0.75in}
+
+\begin{document}
+\noindent{\large\bf EGCP-3210 \hfill Computer Architecture \hfill Spring 2026} \\
+Homework 6 \hfill {\bf Brandon Aikman} \\
+
+% Homework 6
+\begin{enumerate}
+	% 1.
+	\item A two-way set associative cache has lines of 16 bytes and a total data size of 8 kbytes. The 64-Mbyte main memory is byte addressable. Show the format of main memory address in terms of tag, index and word. (10 pts)
+	
+	% 2.
+	\item For the hexadecimal main memory address 111111, 666666, BBBBBB, show the following information, in hexadecimal format, assume there are 16K blocks in the cache, each block has 4 words. (5 pts each; 15 pts total)
+    \begin{enumerate}
+        \item Tag , index, and word value for a direct-mapped cache.
+        \item Tag and word value for a fully associative cache.
+        \item Tag, set and word value for a two-way set associative.
+    \end{enumerate}
+
+    % 3.
+    \item Consider a machine with a byte addressable main memory of 64k bytes and block size of 8 bytes. Assume that a direct mapped cache consisting of 32 lines is used with this machine. (5 pts each; 15 pts total)
+    \begin{enumerate}
+        \item Into what line would bytes with each of the following addresses be stored? \\
+            0001 0001 0001 1011 \\
+            1100 0011 0011 0100 \\
+            1101 0000 0001 1101 \\
+            1010 1010 1010 1010 \\
+        \item Suppose the byte with address 0001 1010 0001 1010 is stored in the cache. What are the addresses of the other bytes stored along with it?
+        \item How many total bits of this cache. (including a validation bit for each cache line)
+    \end{enumerate}
+
+    % 4.
+    \item Consider a cache of 4 lines of 16 bytes each. Main memory is divided into blocks of 16 bytes each. That is, block 0 has bytes with address 0 through 15, and so on. The Least Recently Used replacement scheme is used. Now consider a program that access memory in the following sequence of addresses:\\
+    Once: 63 through 70 \\
+    Loop ten times: 15 through 32; 80 through 95 (20 pts)
+    \begin{enumerate}
+        \item Suppose the cache is organized as direct mapped. Compute the hit ratio.
+        \item Suppose the cache is organized as two-way set associative. Compute the hit ratio.
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}
