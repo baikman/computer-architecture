@@ -1,0 +1,1 @@
+gcc cache-simulator.c -o simulator && ./simulator
