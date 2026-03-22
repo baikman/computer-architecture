@@ -17,26 +17,120 @@ Homework 6 \hfill {\bf Brandon Aikman} \\
 % Homework 6
 \begin{enumerate}
 	% 1.
-	\item A two-way set associative cache has lines of 16 bytes and a total data size of 8 kbytes. The 64-Mbyte main memory is byte addressable. Show the format of main memory address in terms of tag, index and word. (10 pts)
-	
+	\item A two-way set associative cache has lines of 16 bytes and a total data size of 8 kbytes. The 64-Mbyte main memory is byte addressable. Show the format of main memory address in terms of tag, index and word. (10 pts) \\
+	\begin{tabular}{|c|c|c|}
+        \hline
+        Tag & Index & Word \\
+        \hline
+        25..12 & 11..4 & 3..0 \\
+        \hline
+    \end{tabular}
 	% 2.
-	\item For the hexadecimal main memory address 111111, 666666, BBBBBB, show the following information, in hexadecimal format, assume there are 16K blocks in the cache, each block has 4 words. (5 pts each; 15 pts total)
+	\item For the hexadecimal main memory address 111111, 666666, BBBBBB, show the following information, in hexadecimal format, assume there are 16K blocks in the cache, each block has 4 words. (5 pts each; 15 pts total) \\
+	(Assuming padding left with 0s to reach multiple of four bits)
     \begin{enumerate}
-        \item Tag , index, and word value for a direct-mapped cache.
-        \item Tag and word value for a fully associative cache.
-        \item Tag, set and word value for a two-way set associative.
+        \item Tag, index, and word value for a direct-mapped cache. \\
+            111111: 
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Tag & Index & Word \\
+                \hline
+                0x11 & 0x0444 & 0x1 \\
+                \hline
+            \end{tabular}
+
+            666666: 
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Tag & Index & Word \\
+                \hline
+                0x66 & 0x1999 & 0x2 \\
+                \hline
+            \end{tabular}
+
+            BBBBBB: 
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Tag & Index & Word \\
+                \hline
+                0xBB & 0x2EEE & 0x3 \\
+                \hline
+            \end{tabular}
+        \item Tag and word value for a fully associative cache. \\
+            111111: 
+            \begin{tabular}{|c|c|}
+                \hline
+                Tag & Word \\
+                \hline
+                0x044444 & 0x1 \\
+                \hline
+            \end{tabular}
+
+            666666: 
+            \begin{tabular}{|c|c|}
+                \hline
+                Tag & Word \\
+                \hline
+                0x199999 & 0x2 \\
+                \hline
+            \end{tabular}
+
+            BBBBBB: 
+            \begin{tabular}{|c|c|}
+                \hline
+                Tag & Word \\
+                \hline
+                0x2EEEEE& 0x3 \\
+                \hline
+            \end{tabular}
+        \item Tag, set, and word value for a two-way set associative. \\
+            111111: 
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Tag & Set & Word \\
+                \hline
+                0x022 & 0x0444 & 0x1 \\
+                \hline
+            \end{tabular}
+
+            666666: 
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Tag & Set & Word \\
+                \hline
+                0x0CC & 0x1999 & 0x2 \\
+                \hline
+            \end{tabular}
+
+            BBBBBB: 
+            \begin{tabular}{|c|c|c|}
+                \hline
+                Tag & Set & Word \\
+                \hline
+                0x177 & 0x0EEE & 0x3 \\
+                \hline
+            \end{tabular}
     \end{enumerate}
 
     % 3.
     \item Consider a machine with a byte addressable main memory of 64k bytes and block size of 8 bytes. Assume that a direct mapped cache consisting of 32 lines is used with this machine. (5 pts each; 15 pts total)
     \begin{enumerate}
         \item Into what line would bytes with each of the following addresses be stored? \\
-            0001 0001 0001 1011 \\
-            1100 0011 0011 0100 \\
-            1101 0000 0001 1101 \\
-            1010 1010 1010 1010 \\
-        \item Suppose the byte with address 0001 1010 0001 1010 is stored in the cache. What are the addresses of the other bytes stored along with it?
-        \item How many total bits of this cache. (including a validation bit for each cache line)
+            0001 0001 0001 1011 - \textbf{3} \\
+            1100 0011 0011 0100 - \textbf{6} \\
+            1101 0000 0001 1101 - \textbf{3} \\
+            1010 1010 1010 1010 - \textbf{21} \\
+        \item Suppose the byte with address 0001 1010 0001 1010 is stored in the cache. What are the addresses of the other bytes stored along with it? \\
+            0001 1010 0001 1000 \\
+            0001 1010 0001 1001 \\
+            0001 1010 0001 1010 \\
+            0001 1010 0001 1011 \\
+            0001 1010 0001 1100 \\
+            0001 1010 0001 1101 \\
+            0001 1010 0001 1110 \\
+            0001 1010 0001 1111 \\
+        \item How many total bits of this cache. (including a validation bit for each cache line) \\
+            2336 bits. (64 data + 8 tag + 1 validation) * 32 lines.
     \end{enumerate}
 
     % 4.
@@ -44,8 +138,10 @@ Homework 6 \hfill {\bf Brandon Aikman} \\
     Once: 63 through 70 \\
     Loop ten times: 15 through 32; 80 through 95 (20 pts)
     \begin{enumerate}
-        \item Suppose the cache is organized as direct mapped. Compute the hit ratio.
-        \item Suppose the cache is organized as two-way set associative. Compute the hit ratio.
+        \item Suppose the cache is organized as direct mapped. Compute the hit ratio. \\
+        \textbf{324/348 = 93.1\%}
+        \item Suppose the cache is organized as two-way set associative. Compute the hit ratio. \\
+        \textbf{342/348 = 98.3\%}
     \end{enumerate}
     
 \end{enumerate}
