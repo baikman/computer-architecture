@@ -6,7 +6,7 @@
 #define mem_size 64
 #define cache_size 8
 #define set_size 2
-#define set_count cache_size / set_size
+#define set_count (cache_size / set_size)
 
 // Tag Arrays
 static int16_t set_1_tags[set_count];
@@ -106,8 +106,10 @@ int main(void) {
             printf("\nMust be between 0-63.\n\n");
         } else if (set_1_tags[set] == tag && set_1_data[set] == memory[address]) {
             printf("\nCache hit!\n\n");
+            printf("Data at %02d: %02X\n\n", address, memory[address]);
         } else if (set_2_tags[set] == tag && set_2_data[set] == memory[address]) {
             printf("\nCache hit!\n\n");
+            printf("Data at %02d: %02X\n\n", address, memory[address]);
         } else {
             if (last_used[set] == 1) {
                 set_2_tags[set] = tag;
