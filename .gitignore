@@ -1,3 +1,4 @@
+.vscode
 # LaTeX build files
 *.aux
 *.log
